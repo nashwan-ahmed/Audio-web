@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Audio Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: url('https://content3.jdmagicbox.com/v2/comp/mangalore/a3/0824px824.x824.220611215818.p4a3/catalogue/shree-gujarati-english-medium-school-kudroli-mangalore-schools-dbx6hjezv3.jpg') no-repeat center center fixed;
+      background-size: cover;
+      padding: 50px;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    .button {
+      display: inline-block;
+      padding: 15px 25px;
+      margin: 10px;
+      background-color: rgba(76, 175, 80, 0.9);
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: rgba(69, 160, 73, 0.9);
+    }
+    #videoContainer {
+      display: none;
+      margin-top: 30px;
+    }
+    #videoFrame {
+      width: 560px;
+      height: 315px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to My Taj Mahal</h1>
+
+  <!-- Buttons -->
+  <button class="button" onclick="setVideo('https://www.youtube.com/embed/UZ-wkVY993I?autoplay=1')">Garden Birds</button>
+  <button class="button" onclick="setVideo('https://www.youtube.com/embed/IvjMgVS6kng?autoplay=1')">River Yamuna</button>
+  <button class="button" onclick="setVideo('https://www.youtube.com/embed/Pp8hmdnAMog?autoplay=1')">Tourist Echo</button>
+  <button class="button" onclick="setVideo('https://www.youtube.com/embed/beOTR_xQrJo?autoplay=1')">Story of Shah Jahan</button>
+
+  <!-- Video Container (initially hidden) -->
+  <div id="videoContainer">
+    <iframe id="videoFrame" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <br>
+    <button class="button" onclick="hideVideo()">Hide Video</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function setVideo(url) {
+      const container = document.getElementById('videoContainer');
+      const frame = document.getElementById('videoFrame');
+      frame.src = url;
+      container.style.display = 'block';
+    }
+
+    function hideVideo() {
+      const container = document.getElementById('videoContainer');
+      const frame = document.getElementById('videoFrame');
+      frame.src = '';
+      container.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
